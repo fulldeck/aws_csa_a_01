@@ -1,0 +1,34 @@
+
+VPC Creation :
+
+STEP-1 : Login to AWS Account 
+
+
+STEP-2 : Go to N.V Region
+
+
+STEP-3 : Go to VPC Section & Validate the default VPC 
+
+
+STEP-4 : Let's Create a Custom VPC:
+
+	1. VPC : cloud_vpc (10.0.0.0/16)
+
+		1. IGW : cloud_igw 
+		2. Attach the IGW to VPC
+		3. Create 6 Subnets :
+			1. 2 Subnets(Public Facing)
+			2. 4 Subnets(Private Facing)
+		4. Route - 1. Public Route Table & 2. Private Route Table
+		5. Attach 2 Subnets(Public) part of Public Route Table
+		6. Attach 4 Subnets(Private) part of Private Route Table 
+		7. Allow Route via IGW to Public Route Table
+		8. Create NAT Gateway and attach to Private Route Table
+		9. Allow Route via NAT Gateway to Private Route Table
+		10. Create Security Groups:
+			1. NACL
+			2. Security Group
+		11. Launch a EC2(W/L) instance in Public Subnet and Name it as Bastian/Jumpbox/Proxy 
+		12. Launch a EC2 instance part of Private Subnet-1 & Private Subnet-2 
+		13. Connect EC2 instance which is part of Private Subnet-1 & Private Subnet-2 from Laptop/Desktop
+		
