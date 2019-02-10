@@ -12,14 +12,26 @@ STEP-3 : Go to VPC Section & Validate the default VPC
 
 STEP-4 : Let's Create a Custom VPC:
 
-	1. VPC : cloud_vpc (10.0.0.0/16)
+	1. VPC : cloud_vpc (10.0.0.0/16) :  vpc-072302d8403f9e633
 
-		1. IGW : cloud_igw 
-		2. Attach the IGW to VPC
-		3. Create 6 Subnets :
-			1. 2 Subnets(Public Facing)
+		1. IGW : cloud_igw  (igw-0bbd3701a4445838e)
+		2. Attach the IGW to VPC  
+		3. Create 6 Subnets :  
+			1. 2 Subnets(Public Facing)  
+
+				1. subnet-02b690bf3e62ea2e7
+				2. subnet-01760a5c3ff5ebfb3
+
 			2. 4 Subnets(Private Facing)
-		4. Route - 1. Public Route Table & 2. Private Route Table
+				1. subnet-077afbbf458a7f5d1
+				2. subnet-0c284a1aa9be14eb6
+				3. subnet-01a7ff77561faddff
+				4. subnet-05e87a59284f43c83
+
+		4. Route - 
+			1. Public Route Table  : rtb-031c3485dad70f1ee
+			2. Private Route Table : rtb-0d97446f3dad9d794
+
 		5. Attach 2 Subnets(Public) part of Public Route Table
 		6. Attach 4 Subnets(Private) part of Private Route Table 
 		7. Allow Route via IGW to Public Route Table
@@ -31,4 +43,52 @@ STEP-4 : Let's Create a Custom VPC:
 		11. Launch a EC2(W/L) instance in Public Subnet and Name it as Bastian/Jumpbox/Proxy 
 		12. Launch a EC2 instance part of Private Subnet-1 & Private Subnet-2 
 		13. Connect EC2 instance which is part of Private Subnet-1 & Private Subnet-2 from Laptop/Desktop
-		
+
+
+Launch of EC2 instance :
+
+1. AMI
+2. Instance Type
+3. Network : 
+	1. Custom VPC
+   	3. Subnet-3 Private 	
+4. Add storage
+5. Tags
+6. Security Group (22 & 80)
+7. Attach Keypair and Launch instance
+
+
+STEP-1 : 
+
+Elastic Load Balancers :
+
+	1. Application L B
+	2. Network L B
+	3. Classic L B
+
+STEP-2 :
+
+Create a Launch Configuration Template :
+
+#!/bin/bash
+cd /opt/
+yum install wget* curl* vim* unzip* -y
+yum update -y
+yum install http* --skip-broken -y
+mv * /var/www/html/
+echo "<html><body><h1>Welcome to AWS World</h1></body></html>" >> index.html
+service httpd start
+
+
+STEP-3 :
+
+AutoScaling :
+
+	1. We use Launch Configuration
+	2. ELB
+	3. Traffic Logic :
+
+		1. Min : 2
+		2. Max instance : 6
+		3. Increase Scaling : >= 80% for 1-5minutes then launch a new instance 
+		4. Decrease Scaling : <= 40% for 1-5minutes then delete a instance
