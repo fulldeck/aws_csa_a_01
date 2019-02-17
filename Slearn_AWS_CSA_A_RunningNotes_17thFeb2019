@@ -1,0 +1,107 @@
+
+Edge Locations: 
+
+	1. Route 53
+	2. CloudFront:
+		- Content Delivery Network(CDN)
+		- Cached Content, Straming Distribution, Acceleration
+
+Security:
+	3. AWS Shield
+	4. AWS WAF
+
+Acceleration :
+	5. Lambda@Edge
+	6. S3 Transfer
+	7. API Gateway
+
+
+CloudFront Essentials:
+
+	- CloudFront can integrate with Route53 for alternate CNAME's
+		- http://cdn.ckk.cloud
+
+	Cache Behaviors:
+		- PATH patterns (images/*.jpg)
+		- Min, Max Default TTL
+		- Query String Forwarding and Caching
+		- HTTP Methods(GET, POST, PUT, HEAD, etc...)
+
+CloudFront Security:
+	- SSL Certificates
+	- End to End HTTPS
+	- AWS WAF Integration
+	- Distribute Private Content : 
+				- S3
+				- Signed URL or Signed Cookie
+				- Restrict by IP
+				- Trusted Signers(CloudFront Key Pairs)
+	- Geo Restriction
+
+Performance Consideration:
+	1. Reginal Caches
+	2. Point entire domain to CloudFront to speed up dynamic content
+
+
+#--------------------------------------------------------------------------------#
+1. Security    : Protect and Monitor Systems
+
+2. Reliability : Recover from failure and mitigate disruptions
+
+3. Performance : Use Computing Resources efficiently
+
+4. Cost Optiomization : Avoid or Elimate unneeded expense
+
+5. Operational Excellence : Run and Monitor systems to provide business value
+#--------------------------------------------------------------------------------# 
+
+
+#!/bin/bash
+yum update -y
+yum install vim* curl* wget* unzip* nfs* -y
+yum install http* --skip-broken -y
+service httpd start
+chkconfig httpd on
+
+service httpd restart
+
+echo "
+<html>
+<head><title>Keshav Kummari</title></head>
+<body bgcolor="olive">
+<h1>AWS CSA - Associate</h1>
+</body>
+</html>" > /var/www/html/index.html
+
+
+sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-065bebe6.efs.us-east-1.amazonaws.com:/ /var/www/html/
+
+
+
+EFS :
+
+Region : N.Vir
+
+EFS >> 
+
+
+
+CloudFormation :
+
+Create Stack : 
+
+	 - Env :
+
+	 	1. dev.slearn.com
+	 	2. tst.slearn.com
+	 	3. acc.slearn.com
+	 	4. prd.slearn.com >> www.slearn.com
+
+
+	 	Stages :
+	 	1. dev
+	 	2. tst
+	 	3. acc
+	 	4. prd
+
+
