@@ -1,0 +1,59 @@
+#!/bin/bash
+yum update -y
+yum install vim* curl* wget* unzip* nfs* -y
+yum install http* --skip-broken -y
+service httpd start
+chkconfig httpd on
+
+sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2,noresvport fs-4463510f.efs.us-east-1.amazonaws.com:/ /var/www/html/
+
+service httpd restart
+
+wget https://www.free-css.com/assets/files/free-css-templates/download/page231/bizexpress-v1.0.1.zip
+unzip *.zip
+cd Biz*
+mv * /var/www/html/
+
+service httpd restart
+
+echo "
+<html>
+<head><title>Keshav Kummari</title></head>
+<body bgcolor="olive">
+<h1>AWS DevOps CICD Pipeline</h1>
+</body>
+</html>" > /var/www/html/index.html
+
+
+
+# aws ec2 run-instances   --image-id ami-76d6f519 --key-name webserver-awskeys --security-groups mywebdmz --instance-type t2.micro --placement AvailabilityZone=ap-south-1a --block-device-mappings DeviceName=/dev/sdh,Ebs={VolumeSize=8} --count 2
+
+
+STEP-1 : Login to Godaddy & Check the NS records
+
+STEP-2 : Login to AWS MGMT Console & Go to Route53 & create a Hosted Zones
+
+Copy the NS records and go to Godaddy and update accordingly
+
+ns-236.awsdns-29.com.
+ns-1204.awsdns-22.org.
+ns-1589.awsdns-06.co.uk.
+ns-704.awsdns-24.net.
+
+STEP-3 : Go to AWS Mgmt Console and Launch 2 EC2 instance in 2 different AZ.
+
+STEP-4 : Connect 2 EC2 instance from Base Machine using Gitbash & Cmder
+
+STEP-5 : Download, Install & Configure Webserver i.e. Apache Httpd
+
+STEP-6 : Enable the service at BootLevel and Start the service
+
+STEP-7 : Develop a website using html and create a file index.html and place it under DocumentRoot i.e. /var/www/html
+
+STEP-8 : Repeate STEP-5, 6 & 7 on 2nd EC2 instance
+
+STEP-9 : Go to browser and Check with EC2 instance Ipaddress and with your Domain Name
+
+
+
+
