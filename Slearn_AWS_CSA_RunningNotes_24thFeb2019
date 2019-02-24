@@ -1,0 +1,146 @@
+
+
+CloudFormation Designer :
+
+- WYSIWYG Template Editor
+
+
+RDS :
+
+	- RDBMS 
+
+		- Oracle
+		- MySQL
+		- Mariadb
+		- SQL Server
+		- PostgreSQL
+
+ANSI SQL - 2003 :
+
+		- Oracle       :  SQL Sublanguages :
+					 - DDL  : 
+					 - DML
+					 - DQL
+					 - DCL
+					 - TCL  
+		- MySQL :
+		       :  SQL Sublanguages :
+					 - DDL  : 
+					 - DML
+					 - DQL
+					 - DCL
+					 - TCL  
+		- Mariadb
+		       :  SQL Sublanguages :
+					 - DDL  : 
+					 - DML
+					 - DQL
+					 - DCL
+					 - TCL  
+		- SQL Server
+		       :  SQL Sublanguages :
+					 - DDL  : 
+					 - DML
+					 - DQL
+					 - DCL
+					 - TCL  
+		- PostgreSQL
+		       :  SQL Sublanguages :
+					 - DDL  : 
+					 - DML
+					 - DQL
+					 - DCL
+					 - TCL
+
+
+select * from emp.attendance where emp_id = '1020'; 
+
+#--------------------------------------------------------------#
+
+Database Software : Download & Install a Database software i.e. MySQL or Mariadb
+
+EC2 Instance : Windows|Linux
+		
+Do SSH to EC2 instance :
+	
+	- Download & Install a Database software i.e. MySQL or Mariadb
+
+	- Configure
+
+	- Create Schemas and Tables (SQL Queries)
+
+	- Insert Data into Tables (SQL Queries)
+
+	- Access the data using (SQL Queries)
+
+#--------------------------------------------------------------#
+No SQL Database :
+
+A file
+A video
+A image
+
+Semi-Structured Data(Schema Less)
+Flat Table Structure
+API Queries
+High Transaction Rates
+Horizontal Scaling
+
+Keys :
+
+Column 
+
+Key-Value
+
+Document
+
+&
+
+Graph
+
+Examples No-SQL DB : MongoDB, CouchDB, HBase, Cassandra, Riak
+ 
+#--------------------------------------------------------------#
+
+
+
+
+1. AWS Account : 
+
+aws.amazon.com
+
+
+2. Exam Registration :
+
+certmetrix 
+
+ - test exam : 20$
+ - Actual exam  : 150$
+
+3. AWS re:invent
+
+4. AWS Whitepapers
+
+5. AWS Theory and Practicial solutions for mentioned topics
+
+
+https://aws.amazon.com/blogs/architecture/new-aws-certified-solutions-architect-associate-exam-now-in-general-availability/
+
+https://aws.amazon.com/whitepapers/?sc_ichannel=ha&sc_icampaign=acq_awsblogsb&sc_icontent=architecture-resources
+
+https://aws.amazon.com/training/path-architecting/
+
+
+
+#------------------------------------------------------------#
+https://aws.amazon.com/certification/certified-solutions-architect-associate/
+
+https://d1.awsstatic.com/training-and-certification/docs-sa-assoc/AWS_Certified_Solutions_Architect_Associate_Feb_2018_%20Exam_Guide_v1.5.2.pdf
+
+https://d0.awsstatic.com/whitepapers/AWS_Cloud_Best_Practices.pdf
+
+https://aws.amazon.com/search/?searchQuery=re%3Ainvent
+#------------------------------------------------------------#
+
+
+
